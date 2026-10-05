@@ -40,8 +40,13 @@
         }
 
         @keyframes parpadear {
-            from { opacity: 0.2; }
-            to { opacity: 1; }
+            from {
+                opacity: 0.2;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         /* Contenido */
@@ -85,8 +90,13 @@
         }
 
         @keyframes latido {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.18); }
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.18);
+            }
         }
 
         @keyframes aparecer {
@@ -94,6 +104,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -220,6 +231,7 @@
                 transform: translateY(0);
                 opacity: 1;
             }
+
             to {
                 transform: translateY(-110vh);
                 opacity: 0;
@@ -237,6 +249,7 @@
     <!-- INICIO -->
     <section class="inicio">
         <div class="contenido">
+
             <div class="corazon">💜</div>
 
             <h1>Para mi amor</h1>
@@ -248,6 +261,7 @@
             <button class="boton" onclick="irA('historia')">
                 Hay algo que quiero decirte...
             </button>
+
         </div>
     </section>
 
@@ -255,8 +269,10 @@
     <!-- HISTORIA -->
     <section id="historia">
         <div class="contenido">
+
             <div class="tarjeta">
-                <h2> nuestra historia ♡ </h2>
+
+                <h2>nuestra historia ♡</h2>
 
                 <p>
                     Si llegaste hasta aquí, quiero que sepas que cada
@@ -272,14 +288,18 @@
                     Y entre tantas personas en el mundo, qué bonito
                     fue coincidir contigo.
                 </p>
+
             </div>
+
         </div>
     </section>
 
 
     <!-- FOTOS -->
     <section>
+
         <div class="contenido">
+
             <h2>Nuestros recuerdos 📸</h2>
 
             <p>
@@ -301,13 +321,17 @@
                 </div>
 
             </div>
+
         </div>
+
     </section>
 
 
     <!-- RAZONES -->
     <section>
+
         <div class="contenido">
+
             <h2>Razones por las que te amo 💌</h2>
 
             <div class="razones">
@@ -337,13 +361,17 @@
                 </div>
 
             </div>
+
         </div>
+
     </section>
 
 
     <!-- CARTA -->
     <section>
+
         <div class="contenido">
+
             <div class="tarjeta">
 
                 <h2>Una carta para ti 💜</h2>
@@ -375,24 +403,35 @@
                 <p>
                     <strong>Te amo muchísimo. 💜</strong>
                 </p>
-<audio id="musica" loop preload="auto">
-    <source src="./AUD-20261005-WA0025.mp3" type="audio/mpeg">
-</audio>
+
+
+                <!-- MÚSICA -->
+                <audio id="musica" loop preload="auto">
+                    <source src="./AUD-20261005-WA0025.mp3" type="audio/mpeg">
+                </audio>
+
+
                 <button class="boton" onclick="reproducirMusica(); mostrarSorpresa()">
                     Tengo una última cosa para ti...
                 </button>
 
+
                 <div id="sorpresa">
+
                     ✨ Si pudiera volver al momento en que nuestras
                     historias se cruzaron, volvería a elegir conocerte.
                     ✨
+
                 </div>
 
             </div>
+
         </div>
+
     </section>
 
 </main>
+
 
 <footer>
     Hecho con muchísimo amor. ♡
@@ -403,15 +442,35 @@
 
     // Ir a una sección
     function irA(id) {
+
         document.getElementById(id).scrollIntoView({
             behavior: "smooth"
         });
+
     }
+
 
     // Mostrar sorpresa
     function mostrarSorpresa() {
+
         document.getElementById("sorpresa").style.display = "block";
+
     }
+
+
+    // REPRODUCIR MÚSICA
+    function reproducirMusica() {
+
+        const musica = document.getElementById("musica");
+
+        musica.play().catch(function(error) {
+
+            console.log("No se pudo reproducir la música:", error);
+
+        });
+
+    }
+
 
     // Crear estrellas
     const fondo = document.getElementById("estrellas");
@@ -422,14 +481,19 @@
 
         estrella.classList.add("estrella");
 
-        estrella.style.left = Math.random() * 100 + "%";
-        estrella.style.top = Math.random() * 100 + "%";
+        estrella.style.left =
+            Math.random() * 100 + "%";
+
+        estrella.style.top =
+            Math.random() * 100 + "%";
 
         estrella.style.animationDelay =
             Math.random() * 3 + "s";
 
         fondo.appendChild(estrella);
+
     }
+
 
     // Crear corazones flotantes
     setInterval(() => {
@@ -450,10 +514,14 @@
         document.body.appendChild(corazon);
 
         setTimeout(() => {
+
             corazon.remove();
+
         }, 9000);
 
     }, 1200);
+
 </script>
+
 </body>
 </html>
